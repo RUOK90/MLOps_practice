@@ -5,4 +5,4 @@ import requests
 
 
 def test_healthz():
-    assert requests.get('127.0.0.1:5000/healthz').status_code == 200
+    assert requests.get('http://127.0.0.1:5000/healthz').status_code == 200
