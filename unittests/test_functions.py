@@ -17,3 +17,7 @@ def test_multiplication():
 
 def test_division():
     assert functions.division(1, 1) == 1
+
+
+def test_dqrt():
+    assert functions.sqrt(4) == 2
