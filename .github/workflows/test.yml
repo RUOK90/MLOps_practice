@@ -1,0 +1,16 @@
+name: unit, integration test
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test with pytest
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        python3 app.py &
+        sleep 5 &
+        pytest
