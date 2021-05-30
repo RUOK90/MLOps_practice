@@ -15,9 +15,6 @@ def health_check():
     return "", 200
 
 
-# TODO(everyone): GET 메소드로 더하기, 빼기, 곱하기, 나누기 함수 라우트 완성하기
-
-
 @app.route('/addition', methods=['GET'])
 def addition():
     num1 = request.args.get('num1')
@@ -60,6 +57,15 @@ def division():
     if num2 is None:
         num2 = 0
     return render_template('division.html', num1=num1, num2=num2, division=functions.division(float(num1), float(num2)))
+
+
+@app.route('/sqrt', methods=['GET'])
+def sqrt():
+    num1 = request.args.get('num1')
+    if num1 is None:
+        num1 = 0
+
+    return render_template('sqrt.html', num1=num1, sqrt=functions.sqrt(float(num1)))
 
 
 if __name__ == '__main__':
