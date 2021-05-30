@@ -19,5 +19,5 @@ def test_division():
     assert functions.division(1, 1) == 1
 
 
-def test_dqrt():
+def test_sqrt():
     assert functions.sqrt(4) == 2
